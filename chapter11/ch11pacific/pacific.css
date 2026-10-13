@@ -118,12 +118,13 @@ h1 {
 
 h1,
 h2,
-h3 {
+h3,
+footer {
         font-family: Georgia, "Times New Roman", Times, Baskerville, serif;
 }
 
 h2 {
-        color: #1976D2;
+        color: #39c;
         /* c#1976d2 */
         text-shadow: 1px 1px 1px #ccc;
 }
@@ -150,12 +151,12 @@ footer {
 }
 
 .resort {
-        color: #1976d2;
+        color: #5c7fa3;
         font-weight: bold;
 
 }
 
-#homehero
+#homehero,
 #yurthero,
 #trailhero,
 #reservations-hero {
@@ -203,7 +204,7 @@ footer {
         border: 0;
 }
 section {
-        padding: 1rem;
+        padding: 1rem 0;
 }
 /* Table Styles */
 table {
@@ -263,7 +264,7 @@ textarea {
         background: #fff;
         transition: border-color 0.2s ease-in-out
 }
-input:focus
+input:focus,
 textarea:focus {
         border-color: #003;
         outline: none;
@@ -281,7 +282,7 @@ input[type="submit"] {
 }
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-        background-color: #003;
+        background-color: #005;
 }
 .center {
         display: flex;
@@ -289,8 +290,8 @@ input[type="submit"]:focus {
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin: 2em 0;
-        gap: 0.5em;
+        margin: 1em 0;
+        gap: 0.1em;
 }
 .center > h2,
 .center > h3,
@@ -312,7 +313,7 @@ input[type="submit"]:focus {
         max-width: 100%;
         border-radius: 0.5em;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease, box-shadow 0.3 ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 /* Hover effect for videos */
 .content-row video:hover {
@@ -338,7 +339,7 @@ input[type="submit"]:focus {
         border-radius: 0.5em;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         background: #fff;
-        transition: transform 0.3 ease, box-shadow 0.3 ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Figcaption overlay */
@@ -353,7 +354,7 @@ input[type="submit"]:focus {
         font-size: 0.9rem;
         text-align: center;
         opacity: 0;
-        transition: opacity 0.3 ease, transform 0.3 ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
         transform: translateY(20%);
 }
 /* Images */
@@ -362,12 +363,21 @@ input[type="submit"]:focus {
         height: auto;
         display: block;
         object-fit: cover;
-        transition: transform 0.3 ease;
+        transition: transform 0.3s ease;
 }
 /* Hover effect for gallery images */
 .gallery-image:hover figcaption {
         opacity: 1;
         transform: translateY(0);
+}
+.gallery > h3 {
+         grid-column: 1 / -1;
+}
+.gallery-image:hover {
+         transform: scale(1.03); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+} 
+.gallery-image:hover img {
+         transform: scale(1.1); 
 }
 
 @media (min-width: 900px) {
@@ -393,7 +403,7 @@ input[type="submit"]:focus {
         }
 }
 
-@media (min-width: 32.5rem) {
+@media (max-width: 32.5rem) {
         body {
                 background-image: none;
                 border: none;
@@ -465,13 +475,14 @@ input[type="submit"]:focus {
         form input,
         form textarea {
                 width: 100%;
+                display: block;
         }
         input[type="submit"] {
                 width: 100%;
                 margin-top: 0.5em;
         }
 }
-@media (max-width: 37.5rem) {
+@media (min-width: 37.5rem) {
         nav ul {
                 flex-direction: row;
                 justify-content: center;
